@@ -1,0 +1,4 @@
+appColaborador.controller("ColaboradorController", function(){
+	
+	
+});
