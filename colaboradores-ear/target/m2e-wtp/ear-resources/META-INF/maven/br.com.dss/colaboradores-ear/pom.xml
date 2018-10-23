@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>br.com.dss</groupId>
+		<artifactId>colaboradores</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<name>colaboradores-ear</name>
+	<artifactId>colaboradores-ear</artifactId>
+	<packaging>ear</packaging>
+
+	
+	<description>Projeto Colaboradores do grupo DSS com Spring Boot</description>
+
+	<build>
+
+        <finalName>colaboradores</finalName>
+
+        <plugins>
+             <plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-ear-plugin</artifactId>
+	        <version>3.0.1</version>
+	        <configuration>
+	          <!-- http://maven.apache.org/plugins/maven-ear-plugin/ -->
+	          <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <modules>
+                        <ejbModule>
+                            <groupId>br.com.dss</groupId>
+                            <artifactId>colaboradores-core</artifactId>
+                            <bundleFileName>colaboradores_core.jar</bundleFileName>
+                        </ejbModule>
+                        <webModule>
+                            <groupId>br.com.dss</groupId>
+                            <artifactId>colaboradores-web</artifactId>
+                            <bundleFileName>colaboradores_web.war</bundleFileName>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	
+
+	<dependencies>
+        <dependency>
+            <groupId>br.com.dss</groupId>
+            <artifactId>colaboradores-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>br.com.dss</groupId>
+	    	<artifactId>colaboradores-core</artifactId>
+	    	<version>${project.version}</version>
+	    	<type>ejb</type>
+		</dependency>
+    </dependencies>
+
+</project>
