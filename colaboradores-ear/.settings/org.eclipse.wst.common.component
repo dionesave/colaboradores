@@ -128,23 +128,5 @@
         <dependent-module archiveName="mysql-connector-java-5.1.46.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="spring-boot-starter-thymeleaf-2.0.3.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/springframework/boot/spring-boot-starter-thymeleaf/2.0.3.RELEASE/spring-boot-starter-thymeleaf-2.0.3.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="thymeleaf-spring5-3.0.9.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="thymeleaf-3.0.9.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="attoparser-2.0.4.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/attoparser/attoparser/2.0.4.RELEASE/attoparser-2.0.4.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="unbescape-1.1.5.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/unbescape/unbescape/1.1.5.RELEASE/unbescape-1.1.5.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="thymeleaf-extras-java8time-3.0.1.RELEASE.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.1.RELEASE/thymeleaf-extras-java8time-3.0.1.RELEASE.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
     </wb-module>
 </project-modules>
