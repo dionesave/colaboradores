@@ -2,6 +2,7 @@ package br.com.dss.colaboradores.ws.controller;
 
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,12 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.dss.colaboradores.model.Colaborador;
+import br.com.dss.colaboradores.model.ResponseModel;
 import br.com.dss.colaboradores.ws.service.ColaboradorService;
 
 @RestController
+@RequestMapping("/colaborador-service")
 public class ColaboradorController {
 	
 	@Autowired
@@ -25,40 +29,45 @@ public class ColaboradorController {
 	
 	//EndPoints
 	@RequestMapping(method=RequestMethod.POST, value="/colaboradores", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Colaborador> cadastrarColaborador(@RequestBody Colaborador colaborador) {
+	public @ResponseBody ResponseModel cadastrarColaborador(@RequestBody Colaborador colaborador) {
 		
-		Colaborador colaboradorCadastrado = colaboradorService.cadastrar(colaborador);
-		
-		return new ResponseEntity<Colaborador>(colaboradorCadastrado, HttpStatus.CREATED);
+		try {
+			colaboradorService.cadastrar(colaborador);
+			return new ResponseModel(1, "Colaborador registrado com sucesso!");
+		}catch (Exception e) {
+			return new ResponseModel(0, e.getMessage());
+		}
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/colaboradores", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Colaborador>> getAllColaboradores() {
-		Collection<Colaborador> colaboradoresList = colaboradorService.buscarTodos();
-		return new ResponseEntity<Collection<Colaborador>>(colaboradoresList, HttpStatus.ACCEPTED);
+	public Collection<Colaborador> getAllColaboradores() {	
+		return colaboradorService.buscarTodos();	
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/colaboradores/{id}")
-	public ResponseEntity<Colaborador> excluirColaborador(@PathVariable Long id) {
+	public @ResponseBody ResponseModel excluirColaborador(@PathVariable Long id) {
 		
 		Colaborador colaboradorEncontrado = colaboradorService.buscarPorId(id);
 		
-		if(colaboradorEncontrado == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}else {
+		try{
 			colaboradorService.excluir(colaboradorEncontrado);
-			return new ResponseEntity<Colaborador>(HttpStatus.OK);
+			return new ResponseModel(1, "Colaborador excluído com sucesso!");
+			
+		}catch (Exception e) {
+			return new ResponseModel(0, e.getMessage());
 		}
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/colaboradores")
-	public ResponseEntity<Colaborador> alterarColaborador(@RequestBody Colaborador colaborador) {		
+	public @ResponseBody ResponseModel alterarColaborador(@RequestBody Colaborador colaborador) {		
 		
-		if(colaborador == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}else {
+		try {
 			colaboradorService.alterar(colaborador);
-			return new ResponseEntity<>(colaborador, HttpStatus.OK);
+			return new ResponseModel(1, "Colaborador alterado com sucesso!");
+			
+		}catch (Exception e) {
+			return new ResponseModel(0, e.getMessage());
 		}
+			
 	}
 }
