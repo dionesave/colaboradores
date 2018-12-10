@@ -3,17 +3,17 @@
 <table>
     <thead>
     <tr>
-        <th>Código</th>
         <th>Nome</th>
-        <th>Reg. Ativo</th>
-        <th>Editar</th>
-        <th>Excluir</th>
+        <th>Cargo</th>
+        <th>Departamento</th>
+        <th>Descrição</th>
+        <th>Localidade</th>
     </tr>
     </thead>
  
     <tbody>
-        <tr *ngFor="let pessoa of pessoas; let i = index;">
-        <td>{{ pessoa.codigo }}</td>        
+        <tr *ngFor="let colaborador of colaboradores; let i = index;">
+        <td>{{ colaborador.nome }}</td>        
         <td>{{ pessoa.nome }}</td>        
         <td *ngIf='pessoa.ativo'>Sim</td>
         <td *ngIf='!pessoa.ativo'>Não</td>

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
  
 import {Response} from '../../services/response';
+import { ColaboradorService } from 'src/app/services/colaborador.service';
+import { Colaborador } from 'src/app/services/colaborador';
  
 @Component({
     selector: 'app-consulta-pessoa',
@@ -11,10 +13,10 @@ import {Response} from '../../services/response';
   })
   export class ConsultaComponent implements OnInit {
  
-    private pessoas: Pessoa[] = new Array();
+    private colaboradores: Colaborador[] = new Array();
     private titulo:string;
  
-    constructor(private pessoaService: PessoaService,
+    constructor(private colaboradorService: ColaboradorService,
                 private router: Router){}
  
     ngOnInit() {
@@ -23,45 +25,47 @@ import {Response} from '../../services/response';
       this.titulo = "Registros Cadastrados";
  
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
-      this.pessoaService.getPessoas().subscribe(res => this.pessoas = res);
+      this.colaboradorService.getColaboradores().subscribe(res => this.colaboradores = res);
     }
  
+
+    /*
     /**EXCLUI UM REGISTRO QUANDO CLICAMOS NA OPÇÃO EXCLUIR DE UMA 
      * LINHA DA TABELA*/
-    excluir(codigo:number, index:number):void {
+    //excluir(codigo:number, index:number):void {
  
-      if(confirm("Deseja realmente excluir esse registro?")){
+      //if(confirm("Deseja realmente excluir esse registro?")){
  
         /*CHAMA O SERVIÇO PARA REALIZAR A EXCLUSÃO */
-        this.pessoaService.excluirPessoa(codigo).subscribe(response => {
+       // this.pessoaService.excluirPessoa(codigo).subscribe(response => {
  
               /**PEGA O RESPONSE DO SERVIÇO */
-              let res:Response = <Response>response;
+              //let res:Response = <Response>response;
  
               /*1 = SUCESSO
               * MOSTRAMOS A MENSAGEM RETORNADA PELO SERVIÇO E DEPOIS REMOVEMOS
               O REGISTRO DA TABELA HTML*/
-              if(res.codigo == 1){
-                alert(res.mensagem);
-                this.pessoas.splice(index,1);
-              }
-              else{
+              //if(res.codigo == 1){
+               // alert(res.mensagem);
+                //this.pessoas.splice(index,1);
+              //}
+             // else{
                 /*0 = EXCEPTION GERADA NO SERVIÇO JAVA */
-                alert(res.mensagem);
-              }
-          },
-          (erro) => {                    
+                //alert(res.mensagem);
+              //}
+         // },
+         // (erro) => {                    
                /*MOSTRA ERROS NÃO TRATADOS */
-               alert(erro);
-          });        
-      }
+         //      alert(erro);
+         // });        
+      //}
  
-    }
+   // }
  
-    editar(codigo:number):void{
+   // editar(codigo:number):void{
  
-      this.router.navigate(['/cadastro-pessoa',codigo]);
+    //  this.router.navigate(['/cadastro-pessoa',codigo]);
  
-    }
+   // }
  
   }
