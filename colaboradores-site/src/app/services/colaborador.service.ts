@@ -42,6 +42,6 @@ export class ColaboradorService{
 
     atualizarColaborador(colaborador : Colaborador){
         return this.http.put(this.baseUrlService, JSON.stringify(colaborador), {headers : this.headers});
-    }
+    } 
 
 }
