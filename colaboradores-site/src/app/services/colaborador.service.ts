@@ -3,13 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import {Colaborador} from '../services/colaborador';
 import { ConfigService } from './config.service';
-
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-
-
-
-
+import { Observable } from 'rxjs/internal/observable';
 
 @Inject
 export class ColaboradorService{
@@ -29,7 +23,7 @@ export class ColaboradorService{
 
 
     getColaboradores(){
-        return this.http.get(this.baseUrlService).map(res => res.json());
+        return this.http.get(this.baseUrlService);//.map(res => res.json());
     }
 
     addColaborador(colaborador : Colaborador){
@@ -37,7 +31,7 @@ export class ColaboradorService{
     }
 
     excluirColaborador(id : number){
-        return this.http.delete(this.baseUrlService + id).map(function(res){res.json()});
+        return this.http.delete(this.baseUrlService + id);//.map(function(res){res.json()});
     }
 
     atualizarColaborador(colaborador : Colaborador){

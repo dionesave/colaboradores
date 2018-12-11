@@ -14,6 +14,8 @@ import { Colaborador } from 'src/app/services/colaborador';
   export class ConsultaComponent implements OnInit {
  
     private colaboradores: Colaborador[] = new Array();
+    
+   
     private titulo:string;
  
     constructor(private colaboradorService: ColaboradorService,
@@ -25,7 +27,7 @@ import { Colaborador } from 'src/app/services/colaborador';
       this.titulo = "Registros Cadastrados";
  
       /*CHAMA O SERVIÇO E RETORNA TODAS AS PESSOAS CADASTRADAS */
-      this.colaboradorService.getColaboradores().subscribe(res => this.colaboradores = res);
+      this.colaboradorService.getColaboradores().subscribe(function(res){return this.colaboradores = res});
     }
  
 
