@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import {Colaborador} from '../services/colaborador';
 import { ConfigService } from './config.service';
-import { Observable } from 'rxjs/internal/observable';
 
 @Inject
 export class ColaboradorService{
