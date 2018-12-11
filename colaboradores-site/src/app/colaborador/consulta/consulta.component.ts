@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
  
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
  
 import {Response} from '../../services/response';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 import { Colaborador } from 'src/app/services/colaborador';
  
 @Component({
-    selector: 'app-consulta-pessoa',
+    selector: 'app-consulta-colaboradores',
     templateUrl: './consulta.component.html',
     styleUrls:["./consulta.component.css"]
   })
@@ -18,7 +18,7 @@ import { Colaborador } from 'src/app/services/colaborador';
    
     private titulo:string;
  
-    constructor(private colaboradorService: ColaboradorService,
+    constructor(private route: ActivatedRoute, private colaboradorService: ColaboradorService,
                 private router: Router){}
  
     ngOnInit() {

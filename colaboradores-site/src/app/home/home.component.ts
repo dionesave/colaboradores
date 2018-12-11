@@ -9,4 +9,8 @@ import { Component } from "@angular/core";
 
 export  class HomeComponent{
     private mensagem:string = "Página Inicial.";
+
+    constructor() { }
+
+    ngOnInit() { }
 }
