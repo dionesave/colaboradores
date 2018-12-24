@@ -5,6 +5,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ConsultaComponent } from './colaborador/consulta/consulta.component';
 import { AppRoutingModule } from './app.routing.module';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { 
+    path: 'lista',
+    component: ConsultaComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -14,10 +22,11 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: []
 })
+
 export class AppModule { }

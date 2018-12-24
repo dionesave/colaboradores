@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ConsultaComponent } from "./colaborador/consulta/consulta.component";
 
 const APP_ROUTES: Routes = [
-    {
-        path: '',
-        component:ConsultaComponent
-    }
+    {path: 'colaboradores', children: [
+        { path: 'lista'   , component: ConsultaComponent, data: { title: 'Lista de Colaboradores' } },
+        //{ path: 'cadastro', component: ProjetoCadastroComponent, data: { title: 'Novo caso Miner' } },
+        { path: '', redirectTo: 'lista', pathMatch: 'full'},
+       /// { path: '**', redirectTo: 'lista', pathMatch: 'full'}
+    ]}
 ];
 
 
