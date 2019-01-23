@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
  
 import {Router, ActivatedRoute} from '@angular/router';
  
-import {Response} from '../../services/response';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 import { Colaborador } from 'src/app/services/colaborador';
  
