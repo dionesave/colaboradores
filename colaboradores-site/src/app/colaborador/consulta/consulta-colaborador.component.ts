@@ -11,7 +11,7 @@ import { Colaborador } from 'src/app/services/colaborador';
     templateUrl: './consulta.component.html',
     styleUrls:["./consulta.component.css"]
   })
-  export class ConsultaComponent implements OnInit {
+  export class ConsultaColaboradorComponent implements OnInit {
  
     private colaboradores: Colaborador[] = new Array();
     
