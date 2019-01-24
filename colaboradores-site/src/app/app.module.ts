@@ -6,12 +6,14 @@ import { ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ConsultaColaboradorComponent } from './colaborador/consulta/consulta-colaborador.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ConsultaColaboradorComponent
   ],
   imports: [
     BrowserModule,
