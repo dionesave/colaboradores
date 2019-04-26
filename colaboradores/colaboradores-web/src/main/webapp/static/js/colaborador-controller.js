@@ -1,10 +1,7 @@
-//Criação do módulo principal da aplicação
-var appColaborador = angular.module("appColaborador",[]);
+angular.module("appColaborador");
 
-//Criação das Controllers
-appColaborador.controller("indexController", function($scope,$http){
-	
-	
+.controller("listaColaboradorController", function($scope,$http){
+
 	$scope.colaboradores = [];
 	$scope.colaborador = {};
 	
