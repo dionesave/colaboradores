@@ -1,22 +1,20 @@
 <main>
-	<body ng-controller="indexController">
-
-	{{colaborador.nome}}<br/>
-
-	<input type="text" placeholder="digite o nome" ng-model="colaborador.nome" />
-	<!-- input type="text" placeholder="digite o cargo" ng-model="colaborador.cargo"/><br/>
-	<input type="text" placeholder="digite o departamento" ng-model="colaborador.departamento"/><br/>
-	<input type="text" placeholder="digite a localidade" ng-model="colaborador.localidade"/><br/>
-	<input type="text" placeholder="digite a função" ng-model="colaborador.descricaoFuncao"/><br/> -->
-	<input type="button" value="Salvar" ng-click="salvarColaboradores()"/>
-	<input type="button" value="Cancelar" ng-click="cancelarAlterarColaborador()"/>
-
-
-	<div ng-repeat="colaborador in colaboradores">
-		{{colaborador.idColaborador}} - {{colaborador.nome}}
-		<input type="button" value="Alterar" ng-click="alterarColaborador(colaborador)"/>
-		<input type="button" value="Excluir" ng-click="excluirColaborador(colaborador)"/>
+	<div class="container card">
+	  <div class="card-header">
+	    <div class="row">
+	    	<div class="col-md-6">
+	    		<h5>Colaboradores</h5>
+	    	</div>
+	    	<div class="col-md-6">
+	    		<button type="button" class="btn btn-secondary botaoDireita">Novo</button>
+	    		<span class="glyphicon glyphicon-plus"></span>
+	    	</div>
+	    </div>
+	  </div>
+	  <div class="card-body">
+	    <h5 class="card-title">Special title treatment</h5>
+	    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+	    <a href="#" class="btn btn-primary right">Go somewhere</a>
+	  </div>
 	</div>
-
-	</body>
 </main>

@@ -1,0 +1,14 @@
+.telaFundo {
+	background-color: #5F9EA0
+}
+
+.card {
+	width: 850px;
+    padding-right: 0px;
+    padding-left: 0px;
+    top: 110px;
+}
+
+.botaoDireita {
+	float: right;
+}

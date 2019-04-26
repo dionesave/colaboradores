@@ -1,4 +1,4 @@
-angular.module("appColaborador");
+angular.module("appColaborador")
 
 .controller("listaColaboradorController", function($scope,$http){
 
