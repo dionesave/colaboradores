@@ -1,0 +1,37 @@
+.telaFundo {
+	background-color: #5F9EA0
+}
+
+.card {
+	width: 850px;
+    padding-right: 0px;
+    padding-left: 0px;
+    top: 110px;
+}
+
+.botaoDireita {
+	float: right;
+}
+
+#divBuscaColaborador {
+  border:solid 1px;
+  width:850px;
+}
+ 
+#txtBuscaColaborador {
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:800px;
+}
+
+#btnExit {
+	float: right;
+	
+	margin-top: -260px;
+	margin-right: 30px;
+}
