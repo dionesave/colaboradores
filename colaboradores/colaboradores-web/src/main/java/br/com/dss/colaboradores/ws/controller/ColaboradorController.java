@@ -17,7 +17,7 @@ import br.com.dss.colaboradores.model.ResponseModel;
 import br.com.dss.colaboradores.ws.service.ColaboradorService;
 
 @RestController
-@RequestMapping("/colaborador-service")
+@RequestMapping("/colaborador")
 public class ColaboradorController {
 	
 	@Autowired
@@ -25,7 +25,7 @@ public class ColaboradorController {
 	
 	
 	//EndPoints
-	@RequestMapping(method=RequestMethod.POST, value="/colaboradores", consumes=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseModel cadastrarColaborador(@RequestBody Colaborador colaborador) {
 		
 		try {
@@ -36,7 +36,7 @@ public class ColaboradorController {
 		}
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/colaboradores", produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public Collection<Colaborador> getAllColaboradores() {	
 		return colaboradorService.buscarTodos();	
 	}

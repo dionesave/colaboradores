@@ -6,25 +6,44 @@
 	    		<h3>Colaboradores</h3>
 	    	</div>
 	    	<div class="col-md-6">
-	    		<button type="button" class="btn btn-light border border-dark botaoDireita">
-	    			<i class="fas fa-plus"></i>  Novo
-	    		</button>
+	    		<a href="/#!criarColaborador">
+	    			<button type="button" class="btn btn-light border border-dark botaoDireita">
+	    				<i class="fas fa-plus"></i>  Novo
+	    			</button>
+	    		</a>
 	    	</div>
 	    </div>
 	    <br/>
 	    <div class="row">
 	    	<div id="divBuscaColaborador">
 	    		<input id="txtBuscaColaborador" type="text" name="pesquisa" size="114"/>
-	    		<a>
+	    		<a class="text-center">
 	    			<i class="fas fa-search" aria-hidden="true"></i>
 	    		</a>
 	    	</div>
 	    </div>
 	  </div>
-	  <div class="card-body">
-	    <h5 class="card-title">Special title treatment</h5>
-	    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-	    <a href="#" class="btn btn-primary right">Go somewhere</a>
+	  <div class="card-block">
+	  <div class="row">
+		  <div class="col-sm-6 borda-quadro" ng-repeat="colaborador in colaboradores">
+		  	<a>
+			    <div class="internal">
+			      <div class="card-body">
+			      	<div class="row">
+				      	<div class="col-sm-3">
+				      		<img src="..." alt="..." class="rounded-circle">
+				      	</div>
+				      	<div class="col-sm-9">
+					        <h4 class="card-title">{{colaborador.nome}}</h4>
+					        <h5 class="card-title">{{colaborador.cargo}}</h5>
+					        <h6 class="card-title">{{colaborador.departamento}}</h6>
+				    	</div>
+			        <div>
+			      </div>
+			    </div>
+		    </a>
+		  </div>
+		</div>
 	  </div>
 	</div>
 </main>
