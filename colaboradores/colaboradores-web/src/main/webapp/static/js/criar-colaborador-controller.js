@@ -9,8 +9,12 @@ angular.module("appColaborador")
 	$scope.cargos = [];
 	$scope.cargo = {};
 
+	$scope.departamentos = [];
+	$scope.departamento = {};
+
 	var init = function() {
 		$scope.carregarCargos();
+		$scope.carregarDepartamentos();
 	};
 	
 	//Carregamento cargo
@@ -21,7 +25,22 @@ angular.module("appColaborador")
 		}).then(function (response) {
 			$scope.cargos = response.data;
 			console.log(response.status);
-			console.log($scope.cargos);
+			console.log("cargos: "+$scope.cargos);
+		  }, function (response) {
+			  console.log(response.data);
+			  console.log(response.status); 
+		  });
+	};
+
+	//Carregamento cargo
+	$scope.carregarDepartamentos = function(){
+		$http({
+		  method: 'GET',
+		  url: 'departamento'
+		}).then(function (response) {
+			$scope.departamentos = response.data;
+			console.log(response.status);
+			console.log("departamentos: "+$scope.departamentos);
 		  }, function (response) {
 			  console.log(response.data);
 			  console.log(response.status); 
